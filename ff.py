@@ -133,10 +133,12 @@ class GrammarParser:
             # Add the first non-terminal of the grammar (start symbol)
             self.start_symbols.add(self.nt_order[0])
 
+        print("Start Symbols: ", self.start_symbols)
         # For non-terminals in set of start symbols
         for nt in self.start_symbols:
             # Add '$', as it is possible that nothing could follow those symbols
             self.follow[nt].add("$")
+            print("First-Follow: ", self.follow[nt])
 
         changed = True
         while changed:
@@ -148,7 +150,9 @@ class GrammarParser:
                 for prod in self.productions[nt]:
                     # BUGGY
                     # Consider union of current production and future productions
+                    print("Prod1: ", prod, "Prod2: ", prod[1:])
                     for symbol1, symbol2 in zip(prod, prod[1:]):
+                        print("Symbol1: ", symbol1, "Symbol2: ", symbol2)
                        
                         # The first symbol must be a non-terminal
                         if symbol1 in self.nt:
@@ -159,8 +163,9 @@ class GrammarParser:
                             if len(first_sym2 - self.follow[symbol1]) > 0:
                                 changed = True
                                 # Add first_sym2 to Follow(sym1)
-                                self.follow[symbol1] |= first_sym2
+                                self.follow[symbol1] |= first_sym
 
+                    print("Next-follow: ", nt, self.follow[nt])
                     # last_item = Last production
                     last_item = prod[-1]
                     # If the last_item is in set of non-terminal and Follow(non-termina)-Follow(last_item) contains items

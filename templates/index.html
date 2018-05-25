@@ -6,6 +6,14 @@
 	<!--{{ url_for('static',filename='styles/mainpage.css') }}-->
 </head>
 <body>
+	<script>
+		if(1=={{error_code}}) {
+			alert("Seems like you entered input that cannot be parsed by our tool! Please try again.");
+		}
+		else if(2=={{error_code}}) {
+			alert("Seems like you stumbled upon a feature that is still under construction! Please come back later.")
+		}
+	</script>
 	<div class="profile-card">
 		<div class="profile-bio">
 			<h1 class="logo">Grammar Parser</h1>
