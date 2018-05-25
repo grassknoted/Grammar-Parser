@@ -2,6 +2,8 @@ from collections import deque
 from collections import OrderedDict
 from pprint import pprint
 import firstfollow
+import sys
+import time
 import texttable as tt
 from firstfollow import production_list, nt_list as ntl, t_list as tl
 nt_list, t_list=[], []
@@ -194,7 +196,12 @@ def make_table(states):
 		tab.add_row(row)
 
 	s = tab.draw()
-	print(s)
+	print(s)		
+	write_to_file = open("temp_clr_table.txt", 'w')
+	write_to_file.write(s)
+	write_to_file.close()
+	time.sleep(1)
+
 	return CLR_Table
 
 def augment_grammar():
@@ -225,40 +232,45 @@ def main():
 
 	j=calc_states()
 
-	ctr=0
-	for s in j:
-		print("Item{}:".format(ctr))
-		for i in s:
-			print("\t", i)
-		ctr+=1
+	if(sys.argv[1] == 'i'):
+		ctr=0
+		st = ""
+		for s in j:
+			st += "Item{}:".format(ctr)
+			for i in s:
+				st += "\t" + i +"\n"
+			ctr+=1
 
-	
+		print("ST:")
+		print(st)
+		#st = "\n".join(st)
+		#write_to_file = open("temp_clr_items.txt", 'w')
+		#write_to_file.write(st)
+		#write_to_file.close()
 
-	print("\n\tCLR(1) TABLE\n")
-	table=make_table(j)
-	sr, rr=0, 0
+	elif(sys.argv[1] == 't'):
+		table=make_table(j)
+		sr, rr=0, 0
 
-	for i, j in table.items():
-		s, r=0, 0
+		for i, j in table.items():
+			s, r = 0, 0
 
-		for p in j.values():
-			if p!='accept' and len(p)>1:
-				p=list(p)
-				if('r' in p[0]): r+=1
-				else: s+=1
-				if('r' in p[1]): r+=1
-				else: s+=1		
-		if r>0 and s>0: sr+=1
-		elif r>0: rr+=1
+			for p in j.values():
+				if p!='accept' and len(p)>1:
+					p=list(p)
+					if('r' in p[0]): r+=1
+					else: s+=1
+					if('r' in p[1]): r+=1
+					else: s+=1		
+			if r>0 and s>0: sr+=1
+			elif r>0: rr+=1
 
-	print("\n", sr, "s/r conflicts |", rr, "r/r conflicts")
+		print("\n", sr, "s/r conflicts |", rr, "r/r conflicts")
+
+	else:
+		print("Invalid command line argument!")
 
 	return 
 
 if __name__=="__main__":
 	main()
-	
-
-
-
-

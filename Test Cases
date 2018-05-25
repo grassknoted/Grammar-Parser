@@ -1,0 +1,32 @@
+The following test cases are from ParsingEmu itself:
+
+Test Case 1:
+I->A
+A->x|e
+
+Test Case 2:
+I->E
+E->TG
+G->+TG|e
+T->FH
+H->*FH|e
+F->(E)|i
+
+Test Case 3:
+I->S
+S->iEtSZ|a
+Z->cS|e
+E->b
+
+Test Case 4:
+I->S
+S->aAbz
+A->Abc|b
+B->d
+
+Test Case 5:
+I->A
+A->S
+S->L=R|R
+L->*R|i
+R->L

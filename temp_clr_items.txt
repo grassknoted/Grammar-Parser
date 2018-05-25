@@ -1,0 +1,34 @@
+Item0:	Z->.I
+	I->.S
+
+	S->.aAbz
+
+Item1:	Z->I.
+Item2:	I->S.
+
+Item3:	S->a.Abz
+
+	A->.Abc|b
+
+Item4:	I->S
+.
+Item5:	S->aA.bz
+
+	A->A.bc|b
+
+Item6:	S->aAb.z
+
+	A->Ab.c|b
+
+Item7:	S->aAbz.
+
+Item8:	A->Abc.|b
+
+Item9:	S->aAbz
+.
+Item10:	A->Abc|.b
+
+Item11:	A->Abc|b.
+
+Item12:	A->Abc|b
+.

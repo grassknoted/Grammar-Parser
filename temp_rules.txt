@@ -1,4 +1,4 @@
-I->S
-S->aAbz
-A->Abc|b
-B->d
+I->A
+A->S
+S->CC
+C->cC|d

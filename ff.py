@@ -163,7 +163,7 @@ class GrammarParser:
                             if len(first_sym2 - self.follow[symbol1]) > 0:
                                 changed = True
                                 # Add first_sym2 to Follow(sym1)
-                                self.follow[symbol1] |= first_sym
+                                self.follow[symbol1] |= first_sym2
 
                     print("Next-follow: ", nt, self.follow[nt])
                     # last_item = Last production
@@ -196,6 +196,7 @@ class GrammarParser:
     # Function to return a set
     def _return_set(self, pset):
         set_to_consider = []
+        #for symbol, f_set in filter(lambda x: x[0] != self.epsilon, sorted(pset.items(),key=lambda x: self.nt_order.index(x[0]) if x[0] in self.nt_order else len(self.nt_order) + 1)):
         for symbol, f_set in filter(lambda x: x[0] != self.epsilon, sorted(pset.items(),key=lambda x: self.nt_order.index(x[0]) if x[0] in self.nt_order else len(self.nt_order) + 1)):
             if symbol not in self.terminals:
                 set_to_consider.append(str(symbol + " : " + ', '.join(sorted(filter(lambda x: x in self.symbols, f_set)))))
