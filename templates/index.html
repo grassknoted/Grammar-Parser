@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Grammar Parser </title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/index.css') }}">
+	<!--{{ url_for('static',filename='styles/mainpage.css') }}-->
+</head>
+<body>
+	<div class="profile-card">
+		<div class="profile-bio">
+			<h1 class="logo">Grammar Parser</h1>
+			<h2 class="inp_prompt"> Grammar: </h2>
+			<form action="" method="POST" class="inp" id="gram_inp">
+				<textarea rows="13" name="grammar" cols="62" >{{entered_grammar}}</textarea> 
+				<br>
+				<br>
+				<br>
+				<div class="switch-field">
+					<div class="switch-title">Select Parse Type: </div>
+					<br>
+					<input type="radio" id="switch_3_left" name="parse_type" value="first" checked/>
+					<label for="switch_3_left">First</label>
+					<input type="radio" id="switch_3_center" name="parse_type" value="follow" />
+					<label for="switch_3_center">Follow</label>
+					<input type="radio" id="switch_3_right" name="parse_type" value="lalr" />
+					<label for="switch_3_right">LALR Parser</label><br><br>
+					<input type="radio" id="switch_3_left2" name="parse_type" value="lr"/>
+					<label for="switch_3_left2">LR Parser</label>
+					<input type="radio" id="switch_3_center2" name="parse_type" value="ll"/>
+					<label for="switch_3_center2">LL Parser</label>
+					<input type="radio" id="switch_3_right2" name="parse_type" value="slr"/>
+					<label for="switch_3_right2">SLR Parser</label>
+    			</div>
+				<br>
+				<br>
+				<input type="submit" name="grammar" class="sub_but" style=" position:absolute; top:62vh; left: 2.5vw; font-size: 2.5em; color: #4fb783; background-color: #97de95; cursor: pointer; width: 33vw;">
+			</form>
+			<div class="outp">
+				<h1 class="op_prompt" style="width: 20vw;"> {{title}} </h1>
+				<textarea rows="13" name="output" cols="62" class="outp_text">{{output}}</textarea> 
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,129 @@
+html {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background: #6db193 url("../img/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  align-content: center;
+  align-items: center;
+  position: fixed;
+  padding: 0px;
+  margin: 0px;
+  font: normal 14px/1.618em "Roboto", sans-serif;
+}
+
+.logo {
+  position: absolute;
+  left: 2vw;
+  color: #ff6600;
+  font-size: 3em;
+}
+
+.inp_prompt {
+  position: absolute;
+  top: 11vh;
+  left: 2.5vw;
+  font-size: 1.7em;
+  color: #034561;
+}
+
+.inp {
+  position: absolute;
+  top: 21vh;
+  left: 2.5vw;
+}
+
+.profile-card {
+  position: absolute;
+  border-radius: 10px;
+  width: 96vw;
+  left: 2vw;
+  top: 2vh;
+  height: 96vh;
+  background-color: #fbf2d5; 
+}
+
+// Radio Switch
+.switch-field {
+  padding: 40px;
+  overflow: hidden;
+  left: 2.5vw;
+}
+
+.switch-title {
+  margin-bottom: 6px;
+  font-size: 1.7em;
+   color: #034561;
+}
+
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.switch-field label {
+  float: left;
+}
+
+.switch-field label {
+  display: inline-block;
+  width: 11vw;
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition:    all 0.1s ease-in-out;
+  -ms-transition:     all 0.1s ease-in-out;
+  -o-transition:      all 0.1s ease-in-out;
+  transition:         all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #A5DC86;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.outp {
+  position: absolute;
+  left: 45vw;
+}
+
+.op_prompt {
+  position: absolute;
+  top: 11vh;
+  left: 5vw;
+  font-size: 1.7em;
+  color: #034561;
+}
+
+.outp_text {
+  position: absolute;
+  top: 21vh;
+  left: 2.5vw;
+}

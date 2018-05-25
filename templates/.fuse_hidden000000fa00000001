@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Grammar Parser </title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/popup.css') }}">
+	<!--{{ url_for('static',filename='styles/mainpage.css') }}-->
+</head>
+<body>
+	<aside class="profile-card">
+		<header>
+
+		</header>
+		<div class="profile-bio">
+						<h1 style="float: left; top: 3vh; position: absolute;">
+			        GrammarParser
+			</h1>
+			<h2 style="top:12vh; left:2vw; float: left; position: absolute;"> Grammar: </h2>
+			<form action="" method="POST">
+				<textarea rows="10" name="grammar" cols="50" style="top: 16vh; left: 2vw;float: left; position: absolute;" ></textarea>
+				<br>
+				  <input type="radio" name="parse_type" value="first" checked> First<br>
+				  <input type="radio" name="parse_type" value="follow"> Follow<br>
+				  <input type="radio" name="parse_type" value="some_grammar"> Some Grammar>
+				<br>
+				<input type="submit" name="grammar" style="top: 42vh; left: 2vw;float: left; position: absolute;">
+			</form>
+			<div>
+				<h1> {{title}} </h1>
+				<p> {{output}} </p>
+			</div>
+		</div>
+	</aside>
+</body>
